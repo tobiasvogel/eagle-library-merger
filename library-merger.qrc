@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="_icon_cancel">icons/cancel.png</file>
+        <file alias="_icon_save">icons/save.png</file>
+        <file alias="_icon_removefile">icons/removefile.png</file>
+        <file alias="_icon_browse">icons/browse.png</file>
+        <file alias="_icon_join">icons/join.png</file>
+        <file alias="_icon_addmultiple">icons/addmultiple.png</file>
+        <file alias="_icon_addfile">icons/addfile.png</file>
+    </qresource>
+</RCC>

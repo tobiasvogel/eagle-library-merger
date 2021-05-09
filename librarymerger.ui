@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LibraryMerger</class>
+ <widget class="QDialog" name="LibraryMerger">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>337</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalInputLayout">
+     <item>
+      <widget class="QLabel" name="dropFilesBelowLabel">
+       <property name="text">
+        <string>Drop Files Below</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="MultiDragDropFrame" name="fileDropFrame">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>92</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px dashed #cccccc;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>124</number>
+        </property>
+        <item row="0" column="1">
+         <widget class="QLabel" name="fileAddIcon">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="library-merger.qrc">:/icons/_icon_addmultiple</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Add Files Manually</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="inputFileGroupBox">
+       <property name="title">
+        <string>Select File</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLineEdit" name="inputFileLineEdit"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="selectInputFileButtonsLayout">
+          <item>
+           <widget class="QPushButton" name="browseInputPushButton">
+            <property name="text">
+             <string>Browse...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="library-merger.qrc">
+              <normaloff>:/icons/_icon_browse</normaloff>:/icons/_icon_browse</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="addFilePushButton">
+            <property name="text">
+             <string>Add File</string>
+            </property>
+            <property name="icon">
+             <iconset resource="library-merger.qrc">
+              <normaloff>:/icons/_icon_addfile</normaloff>:/icons/_icon_addfile</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="inputVSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>32</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QListWidget" name="filesListWidget"/>
+     </item>
+     <item>
+      <spacer name="fileListVSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>32</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalOutputLayout">
+     <item>
+      <widget class="QGroupBox" name="outputGroupBox">
+       <property name="title">
+        <string>Output File</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLineEdit" name="ouputFileLineEdit"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="selectOutputPushButton">
+          <property name="text">
+           <string>Select...</string>
+          </property>
+          <property name="icon">
+           <iconset resource="library-merger.qrc">
+            <normaloff>:/icons/_icon_save</normaloff>:/icons/_icon_save</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="outputOptsGroupBox">
+       <property name="title">
+        <string>Output Options</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="outputVSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>12</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="buttonLayout">
+       <item>
+        <widget class="QPushButton" name="cancelPushButton">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+         <property name="icon">
+          <iconset resource="library-merger.qrc">
+           <normaloff>:/icons/_icon_cancel</normaloff>:/icons/_icon_cancel</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="mergePushButton">
+         <property name="text">
+          <string>Merge</string>
+         </property>
+         <property name="icon">
+          <iconset resource="library-merger.qrc">
+           <normaloff>:/icons/_icon_join</normaloff>:/icons/_icon_join</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MultiDragDropFrame</class>
+   <extends>QFrame</extends>
+   <header>multidragdropframe.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="library-merger.qrc"/>
+ </resources>
+ <connections/>
+</ui>
